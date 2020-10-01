@@ -1,0 +1,85 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: rgba(246, 248, 221, 0.452);
+}
+.heading {
+  text-align: center;
+  color: rgb(97, 38, 38);
+  bottom: 5rem;
+}
+.imageDiv {
+  position: relative;
+  width: 40vw;
+  height: 40vh;
+  margin: 5rem auto;
+  /* transform: rotateZ(0.5deg); */
+}
+.imageDiv:hover {
+  position: relative;
+  width: 40vw;
+  height: 40vh;
+  margin: 5rem auto;
+  /* transform: rotateZ(-0.5deg); */
+  transition: all 0.5s linear;
+}
+img {
+  width: 90%;
+  height: 90%;
+  display: block;
+  border-radius: 0.3rem;
+  transition: all 0.5s linear;
+}
+.imageDiv::before {
+  content: "";
+  color: antiquewhite;
+
+  background: rgba(61, 60, 60, 0.959);
+  border-radius: 0.3rem;
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  box-sizing: border-box;
+  top: -2rem;
+  left: -2rem;
+  z-index: -1;
+  transition: all 0.5s linear;
+}
+.imageDiv::after {
+  content: "";
+  border: 0.3rem solid rgb(56, 53, 53);
+  border-radius: 0.3rem;
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  box-sizing: border-box;
+  top: -3rem;
+  left: -3rem;
+  z-index: -2;
+  transition: all 0.5s linear;
+}
+
+.imageDiv:hover::before,
+.imageDiv:hover::after {
+  top: 0;
+  left: 0;
+  transition: all 0.5s linear;
+}
+img:hover {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.3rem;
+  transition: all 0.5s linear;
+  /* border: #6b6868 dashed 0.3rem; */
+}
+.caption {
+  display: none;
+  position: absolute;
+  font-size: 1.5rem;
+  font-style: oblique;
+}
+.imageDiv:hover .caption {
+  display: block;
+  color: rgb(83, 83, 80);
+  margin: 2rem;
+}
